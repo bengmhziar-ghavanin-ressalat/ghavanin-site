@@ -3,70 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>قوانین رسالت</title>
 
     <style>
         body {
             margin: 0;
-            font-family: Tahoma, Arial, sans-serif;
-            background: #111;
-            color: white;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            text-align: center;
         }
 
         header {
-            background: #000;
-            padding: 30px;
-            text-align: center;
-            border-bottom: 2px solid white;
+            padding: 50px 20px 30px;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 32px;
+        h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
         }
 
-        header p {
-            color: #ccc;
+        .creator {
+            direction: ltr;
+            font-size: 16px;
+            color: #aaa;
+            margin-bottom: 35px;
         }
 
         .container {
-            max-width: 900px;
-            margin: 40px auto;
+            max-width: 600px;
+            margin: auto;
             padding: 20px;
         }
 
         .box {
-            background: #1b1b1b;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 12px;
+            background: #111;
             border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .box:hover {
+            background: #1b1b1b;
+            transform: scale(1.02);
         }
 
         .box h2 {
-            margin-top: 0;
+            margin: 0;
+            font-size: 22px;
         }
 
-        button {
-            background: white;
-            color: black;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
+        .content {
+            display: none;
+            margin-top: 20px;
+            line-height: 2;
+            color: #ccc;
         }
 
-        button:hover {
-            background: #ccc;
+        .checker-list {
+            direction: ltr;
+            text-align: left;
+            line-height: 2;
+            color: #fff;
         }
 
         footer {
-            text-align: center;
-            padding: 25px;
-            color: #888;
-            border-top: 1px solid #333;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -75,31 +83,44 @@
 
 <header>
     <h1>قوانین رسالت</h1>
-    <p>مرجع ساده و منظم برای مطالعه قوانین</p>
+
+    <div class="creator">
+        Sazandeh Website | MaHzIaR LoRD LuCiFeR
+    </div>
 </header>
 
 <div class="container">
 
-    <div class="box">
-        <h2>📜 قوانین رسالت</h2>
+    <div class="box" onclick="toggleContent('rules')">
+        <h2>قوانین رسالت</h2>
 
-        <p>
-            در این بخش قوانین و مقررات مربوط به رسالت
-            به صورت منظم قرار می‌گیرند.
-        </p>
-
-        <button onclick="showMessage()">
-            مشاهده قوانین
-        </button>
+        <div id="rules" class="content">
+            بخش قوانین رسالت
+            <br>
+            قوانین و مقررات سایت در این بخش قرار می‌گیرد.
+        </div>
     </div>
 
-    <div class="box">
-        <h2>ℹ️ درباره سایت</h2>
 
-        <p>
-            هدف این سایت ارائه اطلاعات قوانین
-            به شکلی ساده و قابل دسترس است.
-        </p>
+    <div class="box" onclick="toggleContent('about')">
+        <h2>درباره سایت</h2>
+
+        <div id="about" class="content">
+            این سایت برای ارائه و مطالعه قوانین رسالت ایجاد شده است.
+        </div>
+    </div>
+
+
+    <div class="box" onclick="toggleContent('checkers')">
+        <h2>چکرین رسالت</h2>
+
+        <div id="checkers" class="content checker-list">
+            Creator Parsa Underrated<br>
+            Behrad god hitler owner all<br>
+            Niklavs | owner²<br>
+            checker | LoRD LuCiFeR<br>
+            checker | Ali mos,ad
+        </div>
     </div>
 
 </div>
@@ -109,8 +130,14 @@
 </footer>
 
 <script>
-    function showMessage() {
-        alert("بخش قوانین به‌زودی اضافه می‌شود.");
+    function toggleContent(id) {
+        const content = document.getElementById(id);
+
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
     }
 </script>
 
