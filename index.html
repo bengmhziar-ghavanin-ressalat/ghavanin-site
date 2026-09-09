@@ -13,36 +13,26 @@
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            background: #000;
             color: #fff;
+            font-family: Arial, sans-serif;
             text-align: center;
-
-            background-image:
-                linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.35)),
-                url("background.jpg");
-
-            background-size: cover;
-            background-position: center top;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-
             min-height: 100vh;
         }
 
         header {
-            padding: 50px 20px 30px;
+            padding: 55px 20px 30px;
         }
 
         h1 {
             font-size: 38px;
-            margin-bottom: 15px;
-            text-shadow: 0 0 15px #ff0000;
+            margin: 0 0 15px;
+            color: #fff;
         }
 
         .creator {
-            direction: ltr;
             font-size: 16px;
-            color: #ddd;
+            color: #ccc;
             margin-bottom: 35px;
         }
 
@@ -53,78 +43,69 @@
         }
 
         .box {
-            background: rgba(0, 0, 0, 0.72);
-            border: 1px solid rgba(255, 0, 0, 0.5);
-            border-radius: 12px;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 14px;
             padding: 25px;
             margin: 20px 0;
             cursor: pointer;
-
-            box-shadow:
-                0 0 15px rgba(255, 0, 0, 0.15);
-
-            backdrop-filter: blur(2px);
         }
 
         .box:hover {
-            background: rgba(20, 0, 0, 0.82);
-            border-color: #ff0000;
-
-            box-shadow:
-                0 0 20px rgba(255, 0, 0, 0.35);
+            background: #181818;
+            border-color: #666;
         }
 
         .box h2 {
             margin: 0;
-            font-size: 22px;
+            font-size: 23px;
             color: #fff;
         }
 
         .content {
             display: none;
             margin-top: 20px;
-            padding-top: 15px;
-
+            padding-top: 20px;
+            border-top: 1px solid #333;
             line-height: 2;
-            color: #eee;
+            color: #fff;
+        }
 
-            border-top: 1px solid rgba(255, 0, 0, 0.4);
+        .rule-button {
+            background: #000;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 12px 0;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .rule-button:hover {
+            background: #222;
         }
 
         .checker-list {
             direction: ltr;
             text-align: left;
             line-height: 2;
-            color: #fff;
         }
 
         footer {
             margin-top: 50px;
             padding: 20px;
-            color: #aaa;
+            color: #777;
             font-size: 14px;
         }
 
         @media (max-width: 600px) {
-
-            header {
-                padding: 35px 15px 20px;
-            }
-
             h1 {
                 font-size: 30px;
             }
 
-            .container {
-                padding: 15px;
-            }
-
             .box {
                 padding: 22px 15px;
-            }
-
-            body {
-                background-attachment: scroll;
             }
         }
     </style>
@@ -142,16 +123,22 @@
 
 </header>
 
-
 <div class="container">
 
-    <!-- دکمه قوانین -->
+    <!-- قوانین -->
     <div class="box" onclick="toggleContent('rules')">
 
         <h2>qavanin AlfaCyB</h2>
 
         <div id="rules" class="content">
-            قوانین و مقررات در این بخش قرار می‌گیرد.
+
+            <a class="rule-button" href="cybering.html" onclick="event.stopPropagation();">
+    قوانین سایبرینگ
+</a>
+            <div class="rule-button">
+                قوانین تایپرینگ
+            </div>
+
         </div>
 
     </div>
@@ -163,7 +150,7 @@
         <h2>درباره سایت</h2>
 
         <div id="about" class="content">
-            اطلاعات مربوط به سایت در این بخش قرار می‌گیرد.
+            این سایت برای نمایش و دسته‌بندی قوانین AlfaCyB ساخته شده است.
         </div>
 
     </div>
@@ -190,7 +177,6 @@
 
 </div>
 
-
 <footer>
     © 2026 qavanin AlfaCyB
 </footer>
@@ -198,20 +184,17 @@
 
 <script>
 
-    function toggleContent(id) {
+function toggleContent(id) {
 
-        const content = document.getElementById(id);
-if (content.style.display === "block") {
+    const content = document.getElementById(id);
 
-            content.style.display = "none";
-
-        } else {
-
-            content.style.display = "block";
-
-        }
-
+    if (content.style.display === "block") {
+        content.style.display = "none";
+    } else {
+        content.style.display = "block";
     }
+
+}
 
 </script>
 
