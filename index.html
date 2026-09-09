@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>qavanin results</title>
+    <title>qavanin AlfaCyB</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #000;
             color: #fff;
             text-align: center;
+
+            background-image:
+                linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.35)),
+                url("background.jpg");
+
+            background-size: cover;
+            background-position: center top;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+
+            min-height: 100vh;
         }
 
         header {
@@ -22,12 +36,13 @@
         h1 {
             font-size: 38px;
             margin-bottom: 15px;
+            text-shadow: 0 0 15px #ff0000;
         }
 
         .creator {
             direction: ltr;
             font-size: 16px;
-            color: #aaa;
+            color: #ddd;
             margin-bottom: 35px;
         }
 
@@ -38,28 +53,42 @@
         }
 
         .box {
-            background: #111;
-            border: 1px solid #333;
+            background: rgba(0, 0, 0, 0.72);
+            border: 1px solid rgba(255, 0, 0, 0.5);
             border-radius: 12px;
             padding: 25px;
             margin: 20px 0;
             cursor: pointer;
+
+            box-shadow:
+                0 0 15px rgba(255, 0, 0, 0.15);
+
+            backdrop-filter: blur(2px);
         }
 
         .box:hover {
-            background: #1b1b1b;
+            background: rgba(20, 0, 0, 0.82);
+            border-color: #ff0000;
+
+            box-shadow:
+                0 0 20px rgba(255, 0, 0, 0.35);
         }
 
         .box h2 {
             margin: 0;
             font-size: 22px;
+            color: #fff;
         }
 
         .content {
             display: none;
             margin-top: 20px;
+            padding-top: 15px;
+
             line-height: 2;
-            color: #ccc;
+            color: #eee;
+
+            border-top: 1px solid rgba(255, 0, 0, 0.4);
         }
 
         .checker-list {
@@ -72,8 +101,31 @@
         footer {
             margin-top: 50px;
             padding: 20px;
-            color: #666;
+            color: #aaa;
             font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 35px 15px 20px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .box {
+                padding: 22px 15px;
+            }
+
+            body {
+                background-attachment: scroll;
+            }
         }
     </style>
 </head>
@@ -81,59 +133,86 @@
 <body>
 
 <header>
-    <h1>qavanin results</h1>
+
+    <h1>qavanin AlfaCyB</h1>
 
     <div class="creator">
-        Sazandeh Website | MaHzIaR LoRD LuCiFeR
+        Sazandeh Website | MaHzIaR ALFA CyB
     </div>
+
 </header>
+
 
 <div class="container">
 
+    <!-- دکمه قوانین -->
     <div class="box" onclick="toggleContent('rules')">
-        <h2>qavanin results</h2>
+
+        <h2>qavanin AlfaCyB</h2>
 
         <div id="rules" class="content">
             قوانین و مقررات در این بخش قرار می‌گیرد.
         </div>
+
     </div>
 
+
+    <!-- درباره سایت -->
     <div class="box" onclick="toggleContent('about')">
+
         <h2>درباره سایت</h2>
 
         <div id="about" class="content">
             اطلاعات مربوط به سایت در این بخش قرار می‌گیرد.
         </div>
+
     </div>
 
+
+    <!-- Checker -->
     <div class="box" onclick="toggleContent('checkers')">
-        <h2>checker results</h2>
+
+        <h2>checker AlfaCyB</h2>
 
         <div id="checkers" class="content checker-list">
-            Creator : parsa umderrated<br>
-            Owner all : behrad god hitler<br>
-            owner² : Niklavs<br>
-            checker : LoRD LuCiFeR<br>
-            checker : Ali mos,ad
+
+            Creator : MaHzIaR ALFA CyB<br>
+            Owner all : MMD NiKlavs<br>
+            checker : khodayegan<br>
+            checker : Reza Manji<br>
+            checker : Ali Mossad<br>
+            checker : MMD HooK<br>
+            checker : Pasha AZKABAN
+
         </div>
+
     </div>
 
 </div>
 
+
 <footer>
-    © 2026 qavanin results
+    © 2026 qavanin AlfaCyB
 </footer>
 
-<script>
-    function toggleContent(id) {
-        const content = document.getElementById(id);
 
-        if (content.style.display === "block") {
+<script>
+
+    function toggleContent(id) {
+
+        const content = document.getElementById(id);
+if (content.style.display === "block") {
+
             content.style.display = "none";
+
         } else {
+
             content.style.display = "block";
+
         }
+
     }
+
 </script>
 
 </body>
