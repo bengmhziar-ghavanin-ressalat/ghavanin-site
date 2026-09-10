@@ -15,187 +15,186 @@
             margin: 0;
             background: #000;
             color: #fff;
-            font-family: Arial, sans-serif;
-            text-align: center;
+            font-family: Tahoma, Arial, sans-serif;
             min-height: 100vh;
         }
 
-        header {
-            padding: 55px 20px 30px;
+        .container {
+            width: 92%;
+            max-width: 620px;
+            margin: auto;
+            padding: 25px 0 40px;
+            text-align: center;
         }
 
         h1 {
-            font-size: 38px;
-            margin: 0 0 15px;
-            color: #fff;
+            font-size: 42px;
+            margin: 0 0 25px;
+            font-weight: bold;
         }
 
-        .creator {
-            font-size: 16px;
+        .subtitle {
+            font-size: 24px;
             color: #ccc;
-            margin-bottom: 35px;
+            margin-bottom: 90px;
         }
 
-        .container {
-            max-width: 600px;
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main-button {
+            width: 100%;
+            padding: 28px 20px;
+            border: 2px solid #ff0000;
+            border-radius: 22px;
+            background: #111;
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .main-button:hover {
+            background: #180000;
+            box-shadow: 0 0 18px #ff0000;
+        }
+
+        .sub-menu {
+            display: none;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: -8px;
+        }
+
+        .sub-button {
+            display: block;
+            width: 90%;
             margin: auto;
             padding: 20px;
-        }
-
-        .box {
-            background: #111;
-            border: 1px solid #333;
-            border-radius: 14px;
-            padding: 25px;
-            margin: 20px 0;
-            cursor: pointer;
-        }
-
-        .box:hover {
-            background: #181818;
-            border-color: #666;
-        }
-
-        .box h2 {
-            margin: 0;
+            border: 2px solid #ff0000;
+            border-radius: 18px;
+            background: #0d0d0d;
+            color: #fff;
+            text-decoration: none;
             font-size: 23px;
-            color: #fff;
+            font-weight: bold;
+            transition: 0.2s;
         }
 
-        .content {
-            display: none;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #333;
-            line-height: 2;
-            color: #fff;
+        .sub-button:hover {
+            background: #180000;
+            box-shadow: 0 0 15px #ff0000;
         }
 
-        .rule-button {
-            background: #000;
-            border: 1px solid #444;
-            color: #fff;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 12px 0;
-            cursor: pointer;
-            font-size: 18px;
+        .checker {
+            width: 100%;
+            padding: 28px;
+            border: 2px solid #ff0000;
+            border-radius: 22px;
+            background: #111;
+            text-align: right;
         }
 
-        .rule-button:hover {
-            background: #222;
+        .checker-title {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 25px;
         }
 
-        .checker-list {
-            direction: ltr;
-            text-align: left;
-            line-height: 2;
+        .line {
+            border-top: 1px solid #444;
+            margin-bottom: 25px;
         }
 
-        footer {
-            margin-top: 50px;
-            padding: 20px;
+        .checker p {
+            font-size: 20px;
+            margin: 18px 0;
+        }
+
+        .footer {
+            margin-top: 70px;
             color: #777;
-            font-size: 14px;
-        }
-
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 30px;
-            }
-
-            .box {
-                padding: 22px 15px;
-            }
+            font-size: 18px;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
 
-<header>
+<div class="container">
 
     <h1>qavanin AlfaCyB</h1>
 
-    <div class="creator">
+    <div class="subtitle">
         Sazandeh Website | MaHzIaR ALFA CyB
     </div>
 
-</header>
+    <div class="menu">
 
-<div class="container">
+        <!-- قوانین AlfaCyB -->
+        <button class="main-button" onclick="toggleRules()">
+            qavanin AlfaCyB
+        </button>
 
-    <!-- قوانین -->
-    <div class="box" onclick="toggleContent('rules')">
+        <!-- دکمه‌های داخلی قوانین -->
+        <div class="sub-menu" id="rulesMenu">
 
-        <h2>qavanin AlfaCyB</h2>
+            <a href="typering.html" class="sub-button">
+                تایپرینگ
+            </a>
 
-        <div id="rules" class="content">
+            <a href="cybering.html" class="sub-button">
+                سایبرینگ
+            </a>
 
-            <a class="rule-button" href="cybering.html" onclick="event.stopPropagation();">
-    قوانین سایبرینگ
-</a>
-            <div class="rule-button">
-                قوانین تایپرینگ
+        </div>
+
+        <!-- درباره سایت -->
+        <button class="main-button">
+            درباره سایت
+        </button>
+
+        <!-- Checker -->
+        <div class="checker">
+
+            <div class="checker-title">
+                checker AlfaCyB
             </div>
 
-        </div>
+            <div class="line"></div>
 
-    </div>
-
-
-    <!-- درباره سایت -->
-    <div class="box" onclick="toggleContent('about')">
-
-        <h2>درباره سایت</h2>
-
-        <div id="about" class="content">
-            این سایت برای نمایش و دسته‌بندی قوانین AlfaCyB ساخته شده است.
-        </div>
-
-    </div>
-
-
-    <!-- Checker -->
-    <div class="box" onclick="toggleContent('checkers')">
-
-        <h2>checker AlfaCyB</h2>
-
-        <div id="checkers" class="content checker-list">
-
-            Creator : MaHzIaR ALFA CyB<br>
-            Owner all : MMD NiKlavs<br>
-            checker : khodayegan<br>
-            checker : Reza Manji<br>
-            checker : Ali Mossad<br>
-            checker : MMD HooK<br>
-            checker : Pasha AZKABAN
+            <p>Creator : MaHzIaR ALFA CyB</p>
+            <p>Owner all : MMD NiKlavs</p>
+            <p>checker : khodayegan</p>
+            <p>checker : Reza Manji</p>
+            <p>checker : Ali Mossad</p>
+            <p>checker : MMD HooK</p>
+            <p>checker : Pasha AZKABAN</p>
 
         </div>
 
+    </div><div class="footer">
+        qavanin AlfaCyB 2026 ©
     </div>
 
 </div>
 
-<footer>
-    © 2026 qavanin AlfaCyB
-</footer>
-
-
 <script>
+    function toggleRules() {
+        const menu = document.getElementById("rulesMenu");
 
-function toggleContent(id) {
-
-    const content = document.getElementById(id);
-
-    if (content.style.display === "block") {
-        content.style.display = "none";
-    } else {
-        content.style.display = "block";
+        if (menu.style.display === "flex") {
+            menu.style.display = "none";
+        } else {
+            menu.style.display = "flex";
+        }
     }
-
-}
-
 </script>
 
 </body>
